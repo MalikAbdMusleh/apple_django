@@ -7,3 +7,7 @@ class Apples(models.Model):
     rare_choice=(("High","H"),("Medium","M"),("Low","L"))
     rarity=models.CharField(choices=rare_choice,max_length=100)
     photo=models.ImageField(upload_to="photos/%y/%m/%d")
+
+
+    def __str__(self):
+        return self.name
