@@ -3,10 +3,88 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="{% static 'css/BS.css' %}" href="/css/master.css">
-    <title></title>
+    <link rel="stylesheet" href="{% static 'css/BS.min.css' %}">
+    <title>apple photo list</title>
   </head>
   <body>
-    <h1>Welcome to apple photo list</h1>
+    <h1 class="mg-lg-9" style="text-align:center">Welcome to apple photo list</h1>
+    <div class="event-schedule-area-two bg-color pad100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <div class="title-text">
+                            <h2>Apples types list</h2>
+                        </div>
+                        <p>
+                            In ludus latine mea, eos paulo quaestio an. Meis possit ea sit. Vidisse molestie<br />
+                            cum te, sea lorem instructior at.
+                        </p>
+                    </div>
+                </div>
+                <!-- /.col end-->
+            </div>
+            <!-- row end-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" scope="col">Date</th>
+                                            <th scope="col">Speakers</th>
+                                            <th scope="col">Session</th>
+                                            <th scope="col">Venue</th>
+                                            <th class="text-center" scope="col">Venue</th>
+                                        </tr>
+                                    </thead>
+
+                                        {%for ele in get_all_data%}
+                                    <tbody>
+                                        <tr class="inner-box">
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="event-img">
+                                                    <img src="{{ele.photo.url}}" alt="" width="80" height="80" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="event-wrap">
+                                                    <h3><a href="#">{{ele.name}}</a></h3>
+                                                    <div class="meta">
+                                                        <div class="organizers">
+                                                            <a href="#">{{ele.name}}</a>
+                                                        </div>
+                                                        <div class="categories">
+                                                            <a href="#">{{ele.rarity}}</a>
+                                                        </div>
+                                                        <div class="time">
+                                                            <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="r-no">
+                                                    <span>{{ele.info}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-primary" href="#">Read More</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        </div>
+                                      </div>
+
   </body>
 </html>
