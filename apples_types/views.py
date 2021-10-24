@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Apples
-from .forms import AddApple
+from .forms import AddApple,AddPic
 # Create your views here.
 def types(request):
     get_all_data=Apples.objects.all()
@@ -25,7 +25,7 @@ def destroy(request, id):
 def create(request):
     form=AddApple()
     if request.method=="POST":
-        form=AddApple(request.POST)
+        form=AddApple(request.POST,request.FILES)
     if form.is_valid():
         form.save()
         return redirect("/types")
@@ -38,9 +38,10 @@ def update(request,id):
     apple =Apples.objects.get(id=id)
     form=AddApple(instance=apple)
     if request.method=="POST":
-        form=AddApple(request.POST,instance=apple) # to replace the instance row with the new field without add new new row
+        form=AddApple(request.POST,request.FILES) # to replace the instance row with the new field without add new new row
     if form.is_valid():
         form.save()
         return redirect("/types")
     data={"form":form}
     return  render(request,"create.html",data)
+ 

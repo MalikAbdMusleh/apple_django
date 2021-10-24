@@ -53,7 +53,9 @@
                                             </th>
                                             <td>
                                                 <div class="event-img">
+                                                    {% if ele.photo %}
                                                     <img src="{{ele.photo.url}}" alt="" width="80" height="80" />
+                                                    {% endif %}
                                                 </div>
                                             </td>
                                             <td>

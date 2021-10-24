@@ -6,7 +6,7 @@ class Apples(models.Model):
     info=models.CharField(max_length=100)
     rare_choice=(("High","H"),("Medium","M"),("Low","L"))
     rarity=models.CharField(choices=rare_choice,max_length=100)
-    # photo=models.ImageField(upload_to="photos/%y/%m/%d")
+    photo=models.ImageField(upload_to="media/%y/%m/%d",null=True)
 
 
     def __str__(self):

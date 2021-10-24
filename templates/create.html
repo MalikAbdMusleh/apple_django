@@ -8,11 +8,16 @@
     <title>Create new type</title>
   </head>
   <body>
-    <form method="POST" class="post-form" action="">
+    <form method="POST" class="post-form" action="" enctype="multipart/form-data">
       {% csrf_token %}
     <div class="container align-middle">
       {{ form }}
+
       <input type="submit" name="submit">
+      {% if form.instence.photo %}
+  <h3>Succesfully uploaded : {{form.instance.name}}</h3>
+  <img src="{{form.instance.photo.url}}" alt="connect" style="max-height:300px">
+{% endif %}
     </div>
 </form>
   </body>
