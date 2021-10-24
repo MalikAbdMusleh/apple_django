@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('info', models.CharField(max_length=100)),
                 ('rarity', models.CharField(choices=[('High', 'H'), ('Medium', 'M'), ('Low', 'L')], max_length=100)),
-                ('photo', models.ImageField(upload_to='photos/%y/%m/%d')),
+                ('photo', models.ImageField(upload_to='photos/%y/%m/%d',null=False)),
             ],
         ),
     ]

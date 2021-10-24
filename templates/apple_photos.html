@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1 class="mg-lg-9" style="text-align:center">Welcome to apple photo list</h1>
+    <a class="btn btn-primary" href="{% url 'create' %}">add apple types</a>
     <div class="event-schedule-area-two bg-color pad100">
         <div class="container">
             <div class="row">
@@ -78,7 +79,9 @@
                                             </td>
                                             <td>
                                                 <div class="primary-btn">
-                                                    <a class="btn btn-primary" href="#">Read More</a>
+
+                                                  <a class="btn btn-primary" href="/types/delete/{{ ele.id }}">Delete {{ele.name}}</a>
+                                                  <a class="btn btn-primary" href="/types/update/{{ ele.id }}">update {{ele.name}}</a>
                                                 </div>
                                             </td>
                                         </tr>

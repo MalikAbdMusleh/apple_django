@@ -1,0 +1,20 @@
+{% load static   %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/BS.min.css' %}">
+    <title>Create new type</title>
+  </head>
+  <body>
+    <form method="POST" class="post-form" action="">
+      {% csrf_token %}
+    <div class="container align-middle">
+      {{ form }}
+      <input type="submit" name="submit">
+    </div>
+</form>
+  </body>
+</html>
+{% endblock %}
